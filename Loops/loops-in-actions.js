@@ -29,3 +29,26 @@ function highlight() {
 }
 
 highlightBtn.addEventListener("click", highlight);
+
+// display user data
+const userData = {
+  firstName: "Eunjeong",
+  lastName: "Kim",
+  age: 31,
+};
+
+const userDataBtn = document.querySelector("#user-data button");
+
+function addUserData() {
+  const ulElement = document.getElementById("output-user-data");
+  ulElement.innerHTML = ""; // 기존 항목 제거
+
+  for (const key in userData) {
+    const listItem = document.createElement("li");
+    const outputTxt = key.toUpperCase() + ": " + userData[key];
+    listItem.textContent = outputTxt;
+    ulElement.append(listItem);
+  }
+}
+
+userDataBtn.addEventListener("click", addUserData);
