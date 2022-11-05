@@ -1,3 +1,4 @@
+// 계산 버튼 기능 추가
 let sumBtn = document.querySelector("#calculator button");
 
 function sum() {
@@ -15,3 +16,16 @@ function sum() {
 }
 
 sumBtn.addEventListener("click", sum);
+
+// highlight 버튼 기능 추가
+const highlightBtn = document.querySelector("#highlight-links button");
+
+function highlight() {
+  const anchors = document.querySelectorAll("#highlight-links a");
+
+  for (const anchor of anchors) {
+    anchor.classList.add("highlight");
+  }
+}
+
+highlightBtn.addEventListener("click", highlight);
